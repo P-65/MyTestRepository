@@ -1,0 +1,4 @@
+<apex:component controller="CaseAttachmentController" access="global">
+    <apex:attribute name="caseId" description="Case Record Id" assignTo="{!caseObjectId}" type="Id" />
+    <apex:outputText value="{!PagePDFContent}" escape="false" />
+</apex:component>

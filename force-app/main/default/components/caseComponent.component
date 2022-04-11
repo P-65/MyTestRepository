@@ -1,0 +1,36 @@
+<apex:component controller="CaseController" access="global">
+    <apex:attribute name="cseId" description="Case Record Id" assignTo="{!caseId}" type="Id" />
+       <style>
+           #h
+           {
+              text-align:center;
+           }
+       </style>
+       <div id="h">
+           <h2>
+            Case Details
+           </h2>
+       </div>
+        <table border="1" align="center">
+            <tr>
+                <td>Case Number</td>
+                <td><apex:outputText value="{!getCase.CaseNumber}" escape="false"/></td>
+            </tr>
+            <tr>
+                <td>Case Reason</td>
+                <td><apex:outputText value="{!getCase.Reason}" escape="false"/></td>
+            </tr>
+            <tr>
+                <td>Case Status</td>
+                <td><apex:outputText value="{!getCase.Status}" escape="false"/></td>
+            </tr>
+            <tr>
+                <td>Case Type</td>
+                <td><apex:outputText value="{!getCase.Type}" escape="false"/></td>
+            </tr>
+            <tr>
+                <td> Case Description</td>
+                <td><apex:outputText value="{!getCase.Description}" escape="false"/></td>
+            </tr>
+        </table>
+</apex:component>

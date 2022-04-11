@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="OppWonUsersList">
+    <aura:handler name="init" value="{!this}" action="{!c.getUserList}"/>
+    <aura:attribute name="salesreplist" type="User[]"/>
+    <lightning:layout verticalAlign="start" multipleRows="true">
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            <aura:iteration items="{!v.salesreplist}" var="salesrp">
+                <c:SalesRepComponent salesrep="{!salesrp}"/>
+            </aura:iteration>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

@@ -1,0 +1,53 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="SampleWorkbenchController">
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:attribute name="options" type="String[]"/>
+    <aura:attribute name="fields" type="String[]"/>
+    <aura:attribute name="qry" type="String"/>
+    <aura:attribute name="results" type="sObject"/>
+    <aura:attribute name="column" type="List"/>
+    <lightning:select aura:Id="selectedObj"  label="Object:" onchange="{!c.getFields}">
+         <aura:iteration items="{!v.options}" var="objectname">
+             <option value="{!objectname}" text="{!objectname}"/> 
+         </aura:iteration>
+    </lightning:select>
+    <lightning:select aura:Id="fldId"  label="Fields:">
+         <aura:iteration items="{!v.fields}" var="fieldname">
+             <option value="{!fieldname}" text="{!fieldname}"/>  
+         </aura:iteration>
+    </lightning:select>
+    <table>
+       <tr>
+           <td>
+               <lightning:select aura:Id="fltrId"  label="Filter results by:">
+                <aura:iteration items="{!v.fields}" var="fieldname">
+                   <option value="{!fieldname}" text="{!fieldname}"/>  
+                </aura:iteration>
+               </lightning:select>
+           </td>
+           <td>
+               <lightning:select aura:Id="opId1" label="">
+                  <option  text="--select--"/>
+                  <option value="=">=</option>
+                  <option value="!=">!=</option>
+                  <option value=">">></option>
+                  <option value="&lt;">&lt;</option>
+                  <option value=">=">>=</option>
+                  <option value="≤">≤</option>
+                  <option  text="starts with"/>
+                  <option  text="ends with"/> 
+                  <option  text="like"/> 
+                  <option  text="in"/>                                  
+                  <option  text="not in"/> 
+                  <option  text="includes"/>
+                  <option  text="excludes"/>
+               </lightning:select>
+               </td>
+           <td><lightning:input aura:id="valueid" name="value"/></td>
+        </tr>
+    </table>
+    <lightning:textarea name="query" label="Query generator:" aura:id="qId" value="{!v.qry}" onclick="{!c.genQuery}"/>
+    <lightning:button label="Query" title="Neutral Action" onclick="{!c.qrResult}"/>
+    <lightning:datatable data="{!v.results}" 
+                         columns="{!v.column}"
+                         keyField="id"/>
+</aura:component>

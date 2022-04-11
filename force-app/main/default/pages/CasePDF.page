@@ -1,0 +1,9 @@
+<apex:page controller="CasePDFController" applyHtmlTag="false" applyBodyTag="false" showHeader="false" sidebar="false">
+    <html>
+        <h1>Case Details</h1><br/><br/>
+        Case Number: <apex:outputText value="{!cs.CaseNumber}" escape="false"/><br/>
+        Case Reason: <apex:outputText value="{!cs.Reason}" escape="false"/><br/>
+        Case Status: <apex:outputText value="{!cs.Status}" escape="false"/><br/>
+        Case Description: <apex:outputText value="{!cs.Description}" escape="false"/><br/>
+    </html>
+</apex:page>

@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:attribute name="salesrep" type="User"/>
+    <div class="slds-card">
+        <div class="slds-tile__detail">
+            <dl class="slds-dl_inline">
+                <dt class="slds-dl_inline__label">Name:</dt>
+                <dd class="slds-dl_inline__detail">{!v.salesrep.Name}</dd> 	
+                
+                <dt class="slds-dl_inline__label">Total Opportunities Won:</dt>
+                <dd class="slds-dl_inline__detail">{!v.salesrep.Total_Won__c}</dd>
+                
+                <dt class="slds-dl_inline__label">Email:</dt>
+                <dd class="slds-dl_inline__detail">{!v.salesrep.Email}</dd>
+            </dl>
+       </div>
+    </div>
+</aura:component>

@@ -1,0 +1,5 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+     <div style="margin-left: auto; margin-right: auto; width: 50%">
+         <apex:image alt="Cat" title="Cat" url="{! URLFOR($Resource.vfimagetest, 'cats/kitten1.jpg')}"/>
+    </div>
+</apex:page>
