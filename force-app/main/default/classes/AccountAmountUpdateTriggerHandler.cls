@@ -3,7 +3,7 @@ public class AccountAmountUpdateTriggerHandler
     public static void updateAccount(List<Contact> consFromTrigger, Map<Id, Contact> conOldMap)
     {
         //Adding a comment to test repository
-        //Adding a comment to develop repository changes
+        //Adding a comment to develop repository changes 2
         set<Id> accIds = new set<Id>();
         if(consFromTrigger != null)
         {
